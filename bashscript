@@ -1,0 +1,6 @@
+#!/bin/bash
+
+mapfile -t lines_ary < demofile3.txt
+printf -v cert '%s' "${lines_ary[@]}"
+echo "$cert"
+pico2wave -l fr-FR -w lookdave.wav "$cert" && aplay lookdave.wav
